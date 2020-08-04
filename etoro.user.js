@@ -4,9 +4,9 @@
 // @name         eToro Enhancements
 // @description  Enhance eToro by hiding some junk.
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @author       Doncho Gunchev <dgunchev@gmail.com>
-// @match        https://www.etoro.com/app/*
+// @match        https://www.etoro.com/*
 // @grant        none
 // @license      GNU LESSER GENERAL PUBLIC LICENSE 2.1+
 // @homepageURL  https://github.com/mr700/tampermonkey-scripts
