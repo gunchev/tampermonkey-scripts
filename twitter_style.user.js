@@ -24,23 +24,29 @@
 //    font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 //}
 
-// https://github.com/jparise/gmail-fixed-font/blob/master/gmail-fixed-font.user.js
-var css = `
+// Ideas from:
+//   https://github.com/jparise/gmail-fixed-font/blob/master/gmail-fixed-font.user.js
+
+(function() {
+    'use strict';
+
+    var css = `
 .r-37j5jr {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-}
-`;
+}`;
 
-if (typeof GM_addStyle != "undefined") {
-    GM_addStyle(css);
-} else if (typeof addStyle != "undefined") {
-    addStyle(css);
-} else {
-    var heads = document.getElementsByTagName("head");
-    if (heads.length > 0) {
-        var node = document.createElement("style");
-        node.type = "text/css";
-        node.appendChild(document.createTextNode(css));
-        heads[0].appendChild(node);
+    if (typeof GM_addStyle != "undefined") {
+        GM_addStyle(css);
+    } else if (typeof addStyle != "undefined") {
+        addStyle(css);
+    } else {
+        var heads = document.getElementsByTagName("head");
+        if (heads.length > 0) {
+            var node = document.createElement("style");
+            node.type = "text/css";
+            node.appendChild(document.createTextNode(css));
+            heads[0].appendChild(node);
+        }
     }
-}
+
+})();
